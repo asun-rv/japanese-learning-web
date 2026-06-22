@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mukashi Mukashi - Japanese Learning Web</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Vocabulary Flashcards</h1>
+
+        <div class="card" id="card" onclick="flipCard()">
+            <div class="inner">
+
+                <div class="front">
+                    <p id="word">こんにちは</p>
+                </div>
+
+                <div class="back">
+                    <p id="translation">Hello</p>
+                </div>
+
+            </div>
+        </div>
+
+        <button onclick="nextWord()">Next</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>    
