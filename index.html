@@ -6,28 +6,62 @@
     <title>Mukashi Mukashi - Japanese Learning Web</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+    <header>
+        <h2>Mukashi Mukashi</h2>
 
-    <div class="container">
-        <h1>Vocabulary Flashcards</h1>
+        <nav>
+            <a href="">Inicio</a>
+            <a href="">Flashcards</a>
+            <a href="">Quiz</a>
+        </nav>
+    </header>
+    
+    <main>
+        <section class="menu">
+            <button onclick="showFlashcards()">🌸 Flashcards 🌸</button>
+            <button onclick="showQuiz()">🌸 Quiz 🌸</button>
+        </section>
+    
+        <section id="flashcards" class="container">
+            <h1>Vocabulary Flashcards</h1>
 
-        <div class="card" id="card" onclick="flipCard()">
-            <div class="inner">
+            <section class="card" id="card" onclick="flipCard()">
+                <article class="inner">
 
-                <div class="front">
-                    <p id="word">こんにちは</p>
-                </div>
+                    <div class="front">
+                        <p id="word">こんにちは</p>
+                    </div>
 
-                <div class="back">
-                    <p id="translation">Hello</p>
-                </div>
+                    <div class="back">
+                        <p id="translation">Hello</p>
+                    </div>
 
-            </div>
-        </div>
+                </article>
+            </section>
 
-        <button onclick="nextWord()">Next</button>
-    </div>
+            <button onclick="nextWord()">Next</button>
+        </section>
+
+        <section id="quiz" style="display:none;">
+            <h1>Vocabulary Quiz</h1>
+
+            <button class="answer" onclick="checkAnswer(0)"></button>
+
+            <button class="answer" onclick="checkAnswer(1)"></button>
+
+            <button class="answer" onclick="checkAnswer(2)"></button>
+
+            <button class="answer" onclick="checkAnswer(3)"></button>
+
+        </section>  
+    </main>
+
+    <footer>
+
+    </footer>
 
     <script src="script.js"></script>
 </body>
-</html>    
+</html>

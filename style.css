@@ -1,7 +1,7 @@
 body {
     font-family: Helvetica;
     text-align: center;
-    background: #ffe7fc;
+    background-image: url("fondo\ flashcards.jpg");
 }
 
 .container {
@@ -9,7 +9,7 @@ body {
 }
 
 .card {
-    background: rgb(183, 187, 251);
+    background: rgb(253, 186, 252);
     width: 250px;
     height: 150px;
     margin: 30px auto;
@@ -43,10 +43,10 @@ body {
 }
 
 .front {
-    background: rgb(183, 187, 251);
+    background: rgb(253, 186, 252);
 }
 
 .back {
-    background: #a8dfff;
+    background: #bde7ff;
     transform: rotateY(180deg);
 }

@@ -7,6 +7,17 @@ const words = [
 
 let index = 0;
 
+//cambiar de modo
+function showFlashcards() {
+    document.getElementById("flashcards").style.display = "block";
+    document.getElementById("quiz").style.display = "none";
+}
+
+function showQuiz() {
+    document.getElementById("flashcards").style.display = "none";
+    document.getElementById("quiz").style.display = "block";
+}
+
 // flip de la tarjeta
 function flipCard() {
     document.getElementById("card").classList.toggle("flipped");
@@ -22,4 +33,3 @@ function nextWord() {
     // importante: reset del flip
     document.getElementById("card").classList.remove("flipped");
 }
-
