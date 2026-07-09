@@ -50,3 +50,18 @@ body {
     background: #bde7ff;
     transform: rotateY(180deg);
 }
+
+.answer {
+    display: block;
+    width: 220px;
+    margin: 10px auto;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.answer:hover {
+    opacity: 0.9;
+}
