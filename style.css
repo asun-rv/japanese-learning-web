@@ -1,7 +1,48 @@
 body {
-    font-family: Helvetica;
+    font-family: Helvetica, Arial, Helvetica, sans-serif;
+    margin:0;
     text-align: center;
     background-image: url("fondo\ flashcards.jpg");
+    background-size:cover;
+    background-position:center;
+}
+
+header {
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 60px;
+    background:rgba(255, 202, 254, 0.85);
+    backdrop-filter:blur(10px);
+}
+
+nav a{
+    text-decoration:none;
+    color:#444;
+    margin-left:20px;
+    font-weight:bold;
+}
+
+nav a:hover{
+    color:#ff69b4;
+}
+
+button{
+    padding:12px 24px;
+    border:none;
+    border-radius:10px;
+    background: #bde7ff;
+    cursor:pointer;
+    transition:.3s;
+}
+
+button:hover{
+    transform:translateY(-3px);
+    background:rgba(255, 202, 254, 0.85);
+}
+
+h1{
+    color:black;
 }
 
 .container {
@@ -15,6 +56,8 @@ body {
     margin: 30px auto;
     perspective: 1000px;
     cursor: pointer;
+    border-radius:15px;
+    box-shadow:0 12px 25px rgba(0,0,0,.15);
 }
 
 .inner {
@@ -47,7 +90,7 @@ body {
 }
 
 .back {
-    background: #bde7ff;
+    background: #c3ffd0;
     transform: rotateY(180deg);
 }
 
@@ -64,4 +107,10 @@ body {
 
 .answer:hover {
     opacity: 0.9;
+}
+
+#score{
+    font-size:22px;
+    font-weight:bold;
+    color:#ff69b4;
 }

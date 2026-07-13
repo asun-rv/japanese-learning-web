@@ -8,6 +8,9 @@ const words = [
 let index = 0;
 let currentQuestion;
 let currentAnswers = [];
+let score = 0;
+let questionNumber = 1;
+let totalQuestions = 20;
 
 //cambiar de modo
 function showFlashcards() {
@@ -18,6 +21,12 @@ function showFlashcards() {
 function showQuiz() {
     document.getElementById("flashcards").style.display = "none";
     document.getElementById("quiz").style.display = "block";
+
+    score = 0;
+    questionNumber = 1;
+
+    document.getElementById("score").textContent = "Score: " + score;
+    document.getElementById("progress").textContent = "Question " + questionNumber;
 
     loadQuestion();
 }
@@ -39,6 +48,8 @@ function nextWord() {
 }
 
 function loadQuestion() {
+
+    document.getElementById("progress").textContent = "Question " + questionNumber + " / " + totalQuestions;
 
     // Elegir palabra aleatoria
     currentQuestion = words[Math.floor(Math.random() * words.length)];
@@ -74,6 +85,9 @@ function checkAnswer(index) {
 
     if (currentAnswers[index] === currentQuestion) {
 
+        score++;
+        document.getElementById("score").textContent = "Score: " + score;
+
         buttons[index].style.backgroundColor = "lightgreen";
 
     } else {
@@ -85,6 +99,27 @@ function checkAnswer(index) {
         buttons[correctIndex].style.backgroundColor = "lightgreen";
     }
 
-    setTimeout(loadQuestion, 1000);
+    questionNumber++;
+
+    if (questionNumber > totalQuestions) {
+
+        setTimeout(() => {
+
+            alert("Quiz finished!\nScore: " + score + "/" + totalQuestions);
+
+            questionNumber = 1;
+            score = 0;
+
+            document.getElementById("score").textContent = "Score: " + score;
+
+            loadQuestion();
+
+        }, 1000);
+
+    } else {
+
+        setTimeout(loadQuestion, 1000);
+
+    }
 
 }
