@@ -51,6 +51,16 @@
 
             <p id="progress">Question 1</p>
 
+            <div class="progress-container">
+
+                <span id="sakura">🌸</span>
+
+                <div class="progress-bar">
+                    <div id="progressFill"></div>
+                </div>
+
+            </div>
+
             <h2 id="question"></h2>
 
             <button class="answer" onclick="checkAnswer(0)"></button>
@@ -58,7 +68,16 @@
             <button class="answer" onclick="checkAnswer(2)"></button>
             <button class="answer" onclick="checkAnswer(3)"></button>
 
-        </section>  
+        </section>
+
+        <section id="endScreen" style="display:none;">
+            <h1>Quiz finished!</h1>
+
+            <h2 id="finalScore"></h2>
+
+            <button onclick="showQuiz()">Play again</button>
+            <button onclick="showFlashcards">Back to Flashcards</button>
+        </section>
     </main>
 
     <footer>

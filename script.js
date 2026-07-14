@@ -16,11 +16,16 @@ let totalQuestions = 20;
 function showFlashcards() {
     document.getElementById("flashcards").style.display = "block";
     document.getElementById("quiz").style.display = "none";
+    document.getElementById("endScreen").style.display = "none";
+    document.getElementById("progressFill").style.width = "0%";
+    document.getElementById("sakura").style.left = "0";
 }
 
 function showQuiz() {
     document.getElementById("flashcards").style.display = "none";
     document.getElementById("quiz").style.display = "block";
+    document.getElementById("endScreen").style.display = "none";
+    document.getElementById("progressFill").style.width = "0%";
 
     score = 0;
     questionNumber = 1;
@@ -50,6 +55,12 @@ function nextWord() {
 function loadQuestion() {
 
     document.getElementById("progress").textContent = "Question " + questionNumber + " / " + totalQuestions;
+    
+    let percentage = ((questionNumber - 1) / totalQuestions) * 100;
+    document.getElementById("progressFill").style.width = percentage + "%";
+
+    const sakura = document.getElementById("sakura");
+    sakura.style.left = `calc(${percentage}% - 10px)`;
 
     // Elegir palabra aleatoria
     currentQuestion = words[Math.floor(Math.random() * words.length)];
@@ -105,14 +116,7 @@ function checkAnswer(index) {
 
         setTimeout(() => {
 
-            alert("Quiz finished!\nScore: " + score + "/" + totalQuestions);
-
-            questionNumber = 1;
-            score = 0;
-
-            document.getElementById("score").textContent = "Score: " + score;
-
-            loadQuestion();
+            showEndScreen();
 
         }, 1000);
 
@@ -122,4 +126,12 @@ function checkAnswer(index) {
 
     }
 
+}
+
+function showEndScreen() {
+    document.getElementById("quiz").style.display = "none";
+    document.getElementById("endScreen").style.display = "block";
+    document.getElementById("finalScore").textContent = "Your score: " + score + " / " + totalQuestions;
+    document.getElementById("progressFill").style.width = "100%";
+    document.getElementById("sakura").style.left = "calc(100% - 20px)";
 }
